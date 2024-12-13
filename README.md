@@ -1,4 +1,4 @@
-# CAST Image Alignment and K-Means Clustering
+# Multi-Modal Consecutive Tissue Alignment
 ##### Author: Benedetta Manzato
 
 This repository contains a Python script that processes high-resolution tissue images and performs image patch extraction, feature extraction using ViT (Vision Transformer), CAST-based alignment, and K-Means clustering of the extracted features. The workflow integrates spatial transcriptomics data and image data for tissue analysis.
