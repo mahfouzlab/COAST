@@ -13,7 +13,7 @@ This repository contains a python implemetation for COAST. COAST leverages the t
 ### Tutorial
 The ```COAST_tutorial``` notebook is a step-by=step example of the application of COAST on two consecutive sections of the Mouse Brain Sagittal Anterior (10X Genomics, [section 1](https://www.10xgenomics.com/datasets/mouse-brain-serial-section-1-sagittal-anterior-1-standard-1-1-0), [section 2](https://www.10xgenomics.com/datasets/mouse-brain-serial-section-2-sagittal-anterior-1-standard-1-1-0))
 
-![](workflow.png)
+![](mouse_anterior.png)
 
 ### Install Dependencies
 
