@@ -4,6 +4,8 @@ import torch
 from PIL import Image
 from torchvision import transforms
 from tqdm import tqdm
+import scanpy as sc
+import numpy as np
 
 # -------------------------------
 # Feature extraction from images
@@ -126,43 +128,22 @@ def extract_features(coord_path, img_path, output_name, outdir,
             if isinstance(feat, (tuple, list)):
                 feat = feat[0]
             features.append(feat.flatten().cpu().numpy())
+    
+    # Stack features into a 2D array
+    features_array = pd.DataFrame(
+        data=np.vstack(features),           
+        index=patch_labels,                
+        columns=[f"feat_{i}" for i in range(len(features[0]))]
+    )
 
-    # Save results
-    features_array = pd.DataFrame(features, index=patch_labels)
     coords_array = pd.DataFrame(coords_list, columns=['x','y'], index=patch_labels)
 
-    features_array.to_csv(os.path.join(VIT_DIR, f"{output_name}_vit_mf.csv"))
-    coords_array.to_csv(os.path.join(VIT_DIR, f"{output_name}_vit_coord.csv"))
+    # Save CSVs with index
+    features_array.to_csv(os.path.join(VIT_DIR, f"{output_name}_vit_mf.csv"), index=True)
+    coords_array.to_csv(os.path.join(VIT_DIR, f"{output_name}_vit_coord.csv"), index=True)
 
     print(f"[INFO] Saved ViT features to {VIT_DIR}/{output_name}_vit_mf.csv")
     print(f"[INFO] Saved patch coordinates to {VIT_DIR}/{output_name}_vit_coord.csv")
 
     return features_array, coords_array
 
-
-# # -------------------------------
-# # CLI (optional)
-# # -------------------------------
-# if __name__ == "__main__":
-#     import argparse
-#     parser = argparse.ArgumentParser(description="Extract ViT features from tissue images")
-#     parser.add_argument("--coord", required=True)
-#     parser.add_argument("--img", required=True)
-#     parser.add_argument("--output_name", required=True)
-#     parser.add_argument("--outdir", required=True)
-#     parser.add_argument("--patch_size", type=int, default=64)
-#     parser.add_argument("--step_size", type=int, default=64)
-#     parser.add_argument("--pad", choices=["none","left","right","top","bottom"], default="none")
-#     parser.add_argument("--mode", choices=["moldata","nomoldata"], default="moldata")
-#     args = parser.parse_args()
-
-#     extract_features(
-#         coord_path=args.coord,
-#         img_path=args.img,
-#         output_name=args.output_name,
-#         outdir=args.outdir,
-#         patch_size=args.patch_size,
-#         step_size=args.step_size,
-#         pad=args.pad,
-#         mode=args.mode
-#     )
