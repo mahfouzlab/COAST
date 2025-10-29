@@ -18,7 +18,7 @@ The ```COAST_tutorial``` notebook is a step-by=step example of the application o
 ### Install dependencies
 
 ```bash
-conda env create -f environment.yml -n coast_env -p PATH
+conda env create -f environment.yml -p PATH/coast_env
 pip install git+https://github.com/wanglab-broad/CAST.git
 ```
 
