@@ -15,15 +15,14 @@ The ```COAST_tutorial``` notebook is a step-by=step example of the application o
 
 ![](mouse_anterior.png)
 
-### Install Dependencies
-
-You can install the necessary dependencies using the following command:
+### Install dependencies
 
 ```bash
-pip install -r requirements.txt
+conda env create -f environment.yml -n coast_env -p PATH
+pip install git+https://github.com/wanglab-broad/CAST.git
 ```
 
-If you use this repository in your research, please cite biorxiv link
+If you use this repository in your research, please cite: biorxiv link
 
 ### Citations 
 - [ssDINO](https://arxiv.org/abs/2104.14294) ([github](https://github.com/facebookresearch/dino))
