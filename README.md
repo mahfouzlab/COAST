@@ -41,7 +41,7 @@ The ```COAST_tutorial``` notebook is a step-by=step example of the application o
 - CAST
 ```
 
-Install CAST: pip install git+https://github.com/wanglab-broad/CAST.git
+Install CAST: ```pip install git+https://github.com/wanglab-broad/CAST.git```
 
 More details at: https://github.com/wanglab-broad/CAST
 
