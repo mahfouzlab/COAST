@@ -15,12 +15,33 @@ The ```COAST_tutorial``` notebook is a step-by=step example of the application o
 
 ![](mouse_anterior.png)
 
-### Install dependencies
+### Dependencies
 
 ```bash
-conda env create -f environment.yml -p PATH/coast_env
-pip install git+https://github.com/wanglab-broad/CAST.git
+- Python 3.10
+- JupyterLab 4.4
+- ipykernel, notebook, nbconvert, nbformat
+- NumPy 2.2
+- SciPy 1.15
+- Pandas 2.3
+- scikit-learn 1.7
+- seaborn 0.13
+- matplotlib 3.9
+- Scanpy 1.11
+- AnnData 0.11
+- UMAP-learn 0.5
+- pynndescent
+- PyTorch 2.5
+- torchvision 0.20
+- torchaudio 2.5
+- CUDA Toolkit 11.8
+- h5py 3.12
+- pillow 11.3
+- pyyaml
 ```
+
+Install CAST: pip install git+https://github.com/wanglab-broad/CAST.git
+more details at: https://github.com/wanglab-broad/CAST
 
 If you use this repository in your research, please cite: biorxiv link
 
