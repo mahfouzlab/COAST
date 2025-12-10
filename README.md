@@ -38,10 +38,12 @@ The ```COAST_tutorial``` notebook is a step-by=step example of the application o
 - h5py 3.12
 - pillow 11.3
 - pyyaml
+- CAST
 ```
 
 Install CAST: pip install git+https://github.com/wanglab-broad/CAST.git
-more details at: https://github.com/wanglab-broad/CAST
+
+More details at: https://github.com/wanglab-broad/CAST
 
 If you use this repository in your research, please cite: biorxiv link
 
