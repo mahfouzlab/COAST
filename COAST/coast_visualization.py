@@ -127,6 +127,7 @@ def run_umap_clustering(outdir, n_clusters=9, spot_size=20, background=True):
         ax.set_aspect('equal', adjustable='box')
         ax.axis('off')
         ax.set_title(f"{tissue} - spatial clusters")
+    plt.legend(markerscale=1.5, fontsize=8, loc="upper right")
     plt.tight_layout()
     out_spatial = os.path.join(vis_outdir, "spatial_clusters.png")
     plt.savefig(out_spatial, dpi=200)
